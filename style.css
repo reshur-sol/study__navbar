@@ -1,0 +1,117 @@
+:root {
+	/* color */
+	--color-white: #fffffe;
+	--color-dark-white: #f8f5f2;
+	--color-scarlet: #f45d48;
+	--color-green: #078080;
+	--color-dark-grey: #232323;
+	--color-black: #000000;
+
+	/* font-size */
+	--font-large: 48px;
+	--font-medium: 28px;
+	--font-regular: 18px;
+	--font-small: 16px;
+	--font-micro: 14px;
+
+	/* font-weight */
+	--weight-bold: 700;
+	--weight-semi-bold: 600;
+	--weight-regular: 400;
+}
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+li {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+	color: var(--color-white);
+}
+
+/* Navbar */
+.navbar {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	background: var(--color-green);
+	padding: 20px;
+}
+.navbar__logo {
+	display: flex;
+	flex-direction: row;
+	font-size: 24px;
+	font-weight: var(--weight-semi-bold);
+}
+.navbar__logo i {
+	color: var(--color-scarlet);
+	padding: 0 10px;
+}
+.navbar__menu {
+	display: flex;
+	flex-direction: row;
+}
+.navbar__items {
+	padding: 8px 12px;
+	font-size: var(--font-regular);
+	font-weight: var(--weight-regular);
+}
+.navbar__items::first-letter {
+	text-transform: uppercase;
+}
+.navbar__items :hover {
+	color: var(--color-scarlet);
+}
+.navbar__social-icons {
+	display: flex;
+	flex-direction: row;
+	color: var(--color-white);
+	font-size: 18px;
+}
+.navbar__social-icons i {
+	padding: 8px 12px;
+	cursor: pointer;
+}
+#icons__twitter:hover {
+	color: #2ba9e0;
+}
+#icons__fb:hover {
+	color: #4867aa;
+}
+.navbar__toggleBtn {
+	position: absolute;
+	right: 32px;
+	font-size: 24px;
+	display: none;
+	color: var(--color-scarlet);
+}
+/* For 768px width */
+@media screen and (max-width: 768px) {
+	.navbar {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	.navbar__menu {
+		width: 100%;
+		flex-direction: column;
+		align-items: center;
+		display: none;
+	}
+	.navbar__social-icons {
+		width: 100%;
+		justify-content: center;
+		padding: 10px 0;
+		display: none;
+	}
+	.navbar__toggleBtn {
+		display: flex;
+	}
+	.navbar__menu.active,
+	.navbar__social-icons.active {
+		display: flex;
+	}
+}
